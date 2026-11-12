@@ -1,0 +1,9 @@
+:{$PORT:80} {
+    root * /app/htdocs
+    encode zstd gzip
+
+    @private path /database.sql /.htaccess /config/* /includes/*
+    respond @private 404
+
+    php_server
+}
